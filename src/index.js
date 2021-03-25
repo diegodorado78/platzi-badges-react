@@ -10,12 +10,17 @@ import ReactDOM from 'react-dom';
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./global.css"; //importa modificaicones a bootstrap
 // import Badge from "./components/Badge";
+// import BadgesNew from "./components/Pages/BadgesNew";
+import Badges from "./components/Pages/Badges";
 import BadgesNew from "./components/Pages/BadgesNew";
+import App from "./components/App";
+
+
 const container = document.getElementById('app');
 
 // ReactDOM.render(__qué__, __dónde__);
 ReactDOM.render(
-	<BadgesNew
+	<App
 	// firstName="Diego"
 	// lastName="Dorado"
 	// jobTitle="Frontend Dev"
