@@ -1,7 +1,7 @@
 import React from "react";
 
 class BadgeForm extends React.Component {
-	state={
+	state = {
 		// user_name:'diego' puedo poner un default que cambia cuando modifique el input
 	};
 	handleChange = (e) => {
@@ -9,28 +9,26 @@ class BadgeForm extends React.Component {
 		// 	value: e.target.value, //contenido ingresado
 		// 	name: e.target.name, //nombre del campo ingresado
 		// });
-
-// borro el metodo porque ya no necesito tener esta info aqui
+		// borro el metodo porque ya no necesito tener esta info aqui
 		// this.setState({
 		// 	[e.target.name]: e.target.value,
-
-			//user_name:"diego",
-			//user_lastName:"dorado"
-			// field: e.target.name, //nombre del input ingresado
+		//user_name:"diego",
+		//user_lastName:"dorado"
+		// field: e.target.name, //nombre del input ingresado
 		// });
 	};
 	handleClick = (e) => {
 		console.log("boton presionado");
 	};
-	handleSubmit = (e) => {
-		e.preventDefault(); //evitar que la pagina se recargue
-		console.log(this.state);
-	};
+	// handleSubmit = (e) => {
+	// 	e.preventDefault(); //evitar que la pagina se recargue
+	// 	console.log(this.state);
+	// };
 	render() {
 		return (
+			//en hadnlesubmit llamo al prop onSubmit que traigo de badgenew y a su vez llama a handle submit
 			<div>
-				<h1>Nuevo usuario </h1>
-				<form onSubmit={this.handleSubmit}>
+				<form onSubmit={this.props.onSubmit}>
 					<div className="form-group">
 						<label>Nombre</label>
 						<input
@@ -38,7 +36,7 @@ class BadgeForm extends React.Component {
 							className="form-control"
 							type="text"
 							name="firstName"
-							value={this.props.formValues.firstName}// guarde el state {form} de news en formValues y hago bin aqui como props.name
+							value={this.props.formValues.firstName} // guarde el state {form} de news en formValues y hago bin aqui como props.name
 							// value={this.state.firstName} cuando el form guarda el estado    // asignar el value al estado asi ahorro storage
 						/>
 						{/* apellido */}
@@ -80,8 +78,12 @@ class BadgeForm extends React.Component {
 						onClick={this.handleClick}
 						className="btn btn-primary"
 					>
-						registrar
+						Registrar||Editar
 					</button>
+					{/* condicional que evalua si this.props.error es true */}
+					{this.props.error && (
+						<p className="text-danger"> {this.props.error.message}</p>
+					)}
 				</form>
 			</div>
 		);

@@ -38,12 +38,10 @@
   text-justify: center;
 }
 
-
-
 .Badge__avatar {
   border-radius: 50%;
   width: 5rem;
-
+  margin: auto 5%;
 }
 
 .Badge__footer {

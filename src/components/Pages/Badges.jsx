@@ -1,77 +1,39 @@
 import React from "react";
-import Navbar from "../Nabvar";
 import "./styles/Badges.css";
 import BadgeList from "../BadgeList";
 import confLogo from "../../images/badge-header.svg";
 import { Link } from "react-router-dom";
-class Badges extends React.Component {
-	constructor(props) {
-		//constructor recibe props para llamar
-		super(props); //inicializar la super clase con los props
-		console.log("1. constructor");
-		this.state = {
-			data: [
-				//inicializo el state vacio
-			],
-		};
-	}
-	componentDidMount() {
-		console.log("3. didMounts");
+import api from'../../api';
+import PageLoading from './PageLoading';
+import PageError from "../Pages/PageError";
 
-		this.timeoutId = setTimeout(() => {
-			this.setState({
-				data: [
-					{
-						id: "2de30c42-9deb-40fc-a41f-05e62b5939a7",
-						firstName: "Freda",
-						lastName: "Grady",
-						email: "Leann_Berge@gmail.com",
-						jobTitle: "Legacy Brand Director",
-						twitter: "Freda_Grady",
-						avatarUrl:
-							"https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782a6b1dff40b?d=identicon",
-					},
-					{
-						id: "d00d3614-101a-44ca-b6c2-0be075aeed3d",
-						firstName: "Major",
-						lastName: "Rodriguez",
-						email: "Ilene66@hotmail.com",
-						jobTitle: "Human Research Architect",
-						twitter: "majorRodriguez61",
-						avatarUrl:
-							"https://www.gravatar.com/avatar/d57a8be8cb9219609905da25d5f3e50a?d=identicon",
-					},
-					{
-						id: "63c03386-33a2-4512-9ac1-354ad7bec5e9",
-						firstName: "Daphney",
-						lastName: "Torphy",
-						email: "Ron61@hotmail.com",
-						jobTitle: "National Markets Officer",
-						twitter: "Torphy96105",
-						avatarUrl:
-							"https://www.gravatar.com/avatar/e74e87d40e55b9ff9791c78892e55cb7?d=identicon",
-					},
-				],
-			});
-		}, 3000);
+class Badges extends React.Component {
+	state    =    {
+		//defino estado inicial para que no genere error
+								loading:    true,
+								error:    null,
+								data:    undefined,
+	};
+	componentDidMount(){
+		this.fetchData()
 	}
-	componentDidUpdate(prevProps, prevState) {
-		console.log("5.componentDidUpdate()");
-		console.log({
-			prevProps: prevProps,
-			prevState: prevState,
-		});
-		console.log({
-			props: this.props,
-			state: this.state,
-		});
-	}
-	componentWillUnmount() {
-		console.log("6.desmontaje del componente");
-		clearTimeout(this.timeoutId); //recibe id y cancela el trabajo pendiente
+	fetchData= async() => {
+		this.setState({loading:true,error:null});//hago esto para futuras ocasiones cuando llame a fetchDATA
+		try {
+			const data = await api.badges.list();
+			this.setState({loading:false,data:data})//guardo los datos si los encuentro
+		}
+		catch (error) {
+						this.setState({ loading: false,error:error });//guardamos el error en el state
+		}
 	}
 	render() {
-		console.log("2/4. render");
+		if(this.state.loading ===true){
+			return <PageLoading />//aparece y se queda porque no hay nada que lo cambie
+		}
+		if (this.state.error) {
+			return <PageError error={this.state.error}/>; //paso el state.error como props al PageError
+		}
 		return (
 			<React.Fragment>
 				<div className="Badges">
