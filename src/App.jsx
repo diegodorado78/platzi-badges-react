@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Layout from "./Layout";
-import Home from "./Pages/Home";
-import BadgesNew from "../components/Pages/BadgesNew";
-import BadgeEdit from "../components/Pages/BadgeEdit";
-import BadgeDetailsContainer from "./Pages/BadgeDetailsContainer";
+import Layout from "./components/Layout";
+import Home from "./components/Pages/Home";
+import BadgesNew from "./components/Pages/BadgesNew";
+import BadgeEdit from "./components/Pages/BadgeEdit";
+import BadgeDetailsContainer from "./components/Pages/BadgeDetailsContainer";
 
-import Badges from "../components/Pages/Badges";
-import NotFound from "../components/Pages/NotFound";
+import Badges from "./components/Pages/Badges";
+import NotFound from "./components/Pages/NotFound";
 
 function App() {
 	return (

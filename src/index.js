@@ -13,10 +13,10 @@ import "./global.css"; //importa modificaicones a bootstrap
 // import BadgesNew from "./components/Pages/BadgesNew";
 import Badges from "./components/Pages/Badges";
 import BadgesNew from "./components/Pages/BadgesNew";
-import App from "./components/App";
+import App from "./App";
 
 
-const container = document.getElementById('app');
+const container = document.getElementById('root');
 
 // ReactDOM.render(__qué__, __dónde__);
 ReactDOM.render(
