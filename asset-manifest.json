@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/platzi-badges-react/static/css/main.65041e73.chunk.css",
+    "main.js": "/platzi-badges-react/static/js/main.fa74c4e8.chunk.js",
+    "main.js.map": "/platzi-badges-react/static/js/main.fa74c4e8.chunk.js.map",
+    "runtime-main.js": "/platzi-badges-react/static/js/runtime-main.6c047a7d.js",
+    "runtime-main.js.map": "/platzi-badges-react/static/js/runtime-main.6c047a7d.js.map",
+    "static/css/2.ba27c2ca.chunk.css": "/platzi-badges-react/static/css/2.ba27c2ca.chunk.css",
+    "static/js/2.e4025ef7.chunk.js": "/platzi-badges-react/static/js/2.e4025ef7.chunk.js",
+    "static/js/2.e4025ef7.chunk.js.map": "/platzi-badges-react/static/js/2.e4025ef7.chunk.js.map",
+    "index.html": "/platzi-badges-react/index.html",
+    "static/css/2.ba27c2ca.chunk.css.map": "/platzi-badges-react/static/css/2.ba27c2ca.chunk.css.map",
+    "static/css/main.65041e73.chunk.css.map": "/platzi-badges-react/static/css/main.65041e73.chunk.css.map",
+    "static/js/2.e4025ef7.chunk.js.LICENSE.txt": "/platzi-badges-react/static/js/2.e4025ef7.chunk.js.LICENSE.txt",
+    "static/media/astronautas.72ac3df5.svg": "/platzi-badges-react/static/media/astronautas.72ac3df5.svg",
+    "static/media/badge-header.3e56976b.svg": "/platzi-badges-react/static/media/badge-header.3e56976b.svg",
+    "static/media/BadgeDetailsContainer.css": "/platzi-badges-react/static/media/estrellas.57a727a7.svg",
+    "static/media/logo conf.52fd4d37.svg": "/platzi-badges-react/static/media/logo conf.52fd4d37.svg",
+    "static/media/logo.b7612186.svg": "/platzi-badges-react/static/media/logo.b7612186.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6c047a7d.js",
+    "static/css/2.ba27c2ca.chunk.css",
+    "static/js/2.e4025ef7.chunk.js",
+    "static/css/main.65041e73.chunk.css",
+    "static/js/main.fa74c4e8.chunk.js"
+  ]
+}
